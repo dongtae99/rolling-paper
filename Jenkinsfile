@@ -6,7 +6,7 @@ node {
         dockerImage = docker.build("dongtae9901/node-front:1.0")
     }
     stage('Push image') {
-        withDockerRegistry([ credentialsId: "docker-access-token", url: "" ]) {
+        withDockerRegistry([ credentialsId: "docker_access_token", url: "" ]) {
             dockerImage.push()
         }
     }
